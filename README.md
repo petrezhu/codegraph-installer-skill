@@ -1,5 +1,7 @@
 # CodeGraph Installer Skill
 
+[中文说明](README.zh-CN.md)
+
 This Codex skill keeps CodeGraph available to coding agents on a local machine. It installs the CodeGraph CLI when needed, initializes project indexes, registers the CodeGraph MCP server with supported agents, and adds startup hooks so new sessions can repair missing setup automatically.
 
 The current implementation targets the Colby McHenry CodeGraph CLI package (`@colbymchenry/codegraph`) and uses its own installer for agent MCP registration.
