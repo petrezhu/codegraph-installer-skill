@@ -1,0 +1,10 @@
+.codegraph/
+*.log
+*.tmp
+*.bak
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+node_modules/
+.DS_Store
+Thumbs.db
