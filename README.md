@@ -48,19 +48,17 @@ Agent configuration touched by setup:
 
 ## Quick Start
 
-Install from GitHub:
+Run this from any project root. It clones the skill if needed, then installs/repairs CodeGraph, indexes the current project, registers MCP servers, and installs startup hooks:
 
 ```powershell
-git clone https://github.com/petrezhu/codegraph-installer-skill.git "$HOME\.codex\skills\codegraph-bootstrap"
+$skill = "$HOME\.codex\skills\codegraph-bootstrap"
+if (-not (Test-Path -LiteralPath $skill)) {
+  git clone https://github.com/petrezhu/codegraph-installer-skill.git $skill
+}
+powershell -NoProfile -ExecutionPolicy Bypass -File "$skill\scripts\Invoke-CodeGraphBootstrap.ps1"
 ```
 
-From any project root:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File "$HOME\.codex\skills\codegraph-bootstrap\scripts\Install-CodeGraphBootstrap.ps1"
-```
-
-Or through the Codex skill wrapper:
+If the skill is already installed, the short form is:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File "$HOME\.codex\skills\codegraph-bootstrap\scripts\Invoke-CodeGraphBootstrap.ps1"
